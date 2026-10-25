@@ -1,0 +1,59 @@
+/* ═══════════════════════════════════════════════════════
+   💌 CONTACTO
+═══════════════════════════════════════════════════════ */
+
+.contact { padding: 100px 0; }
+
+.contact-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 60px; }
+.plus-icon { font-family: var(--font-display); font-size: 80px; color: var(--color-accent); line-height: 0.8; }
+
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+
+.contact-info > p { font-size: 18px; line-height: 1.6; margin-bottom: 30px; }
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--color-white);
+  padding: 20px 0;
+  border-bottom: 1px solid var(--color-border);
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+.contact-row:hover { color: var(--color-text); border-bottom-color: var(--color-white); }
+
+/* Formulario */
+.contact-form { display: flex; flex-direction: column; gap: 25px; }
+
+.form-field { display: flex; flex-direction: column; gap: 10px; }
+.form-field span { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.15em; color: var(--color-white); }
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 14px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-white);
+  font-size: 16px;
+  outline: none;
+  resize: vertical;
+  transition: border-color var(--transition-fast);
+}
+.form-field input::placeholder,
+.form-field textarea::placeholder { color: #555; }
+.form-field input:focus,
+.form-field textarea:focus { border-bottom-color: var(--color-white); }
+
+.form-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 10px; }
+.form-submit { background: var(--color-white); border-color: var(--color-white); color: var(--color-black); }
+.form-submit:hover { background: transparent; color: var(--color-white); }
+
+.form-success { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.05em; color: var(--color-white); }
+
+@media (max-width: 1000px) {
+  .contact-grid { grid-template-columns: 1fr; gap: 50px; }
+}

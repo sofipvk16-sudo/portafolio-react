@@ -1,0 +1,151 @@
+/* ═══════════════════════════════════════════════════════
+   🎯 HERO (EDITORIAL / 3 CAPAS)
+═══════════════════════════════════════════════════════ */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  padding-top: 100px;
+  padding-bottom: 80px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* CAPA 1: texto gigante de fondo */
+.giant-bg-text {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-display);
+  font-size: clamp(90px, 18vw, 280px);
+  font-weight: 400;
+  color: var(--color-accent);
+  z-index: 1;
+  white-space: nowrap;
+  pointer-events: none;
+  letter-spacing: 2px;
+  line-height: 0.8;
+}
+
+/* CAPA 2: foto */
+.hero-image-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-15%);
+  height: 92vh;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-image-wrapper img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  object-position: bottom;
+  filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.8));
+}
+
+/* CAPA 3: contenido frontal */
+.hero-inner {
+  position: relative;
+  z-index: 3;
+  width: min(1400px, calc(100% - 80px));
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.hero-content { max-width: 400px; }
+
+.greeting {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  font-style: italic;
+  color: var(--color-white);
+  margin-bottom: 5px;
+}
+
+.hero-name h2 {
+  font-family: var(--font-display);
+  font-size: clamp(80px, 10vw, 120px);
+  font-weight: 400;
+  line-height: 0.85;
+  color: var(--color-white);
+  letter-spacing: 2px;
+}
+.hero-name .accent-text { color: var(--color-accent); }
+
+.hero-role {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  color: var(--color-white);
+  margin: 25px 0 20px;
+  line-height: 1.4;
+}
+.role-sub { font-size: 10px; color: var(--color-text); }
+
+.hero-description p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-text);
+  margin-bottom: 30px;
+}
+.hero-description strong { color: var(--color-white); font-weight: normal; }
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--color-white);
+  border: 1px solid var(--color-border);
+  padding: 14px 28px;
+  border-radius: 50px;
+  transition: all var(--transition-fast);
+}
+.cta-button:hover { background: var(--color-white); border-color: var(--color-white); color: var(--color-black); }
+
+/* Ficha técnica (derecha) */
+.hero-floating-stats { display: flex; flex-direction: column; gap: 30px; max-width: 250px; }
+
+.stat-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--color-white);
+}
+.stat-row .accent-text { font-size: 16px; line-height: 0.8; }
+
+.tech-specs { display: flex; flex-direction: column; gap: 20px; }
+.spec-item { display: flex; gap: 15px; align-items: flex-start; }
+.spec-num { font-family: var(--font-display); font-size: 24px; color: var(--color-accent); line-height: 1; }
+.spec-info h4 { font-family: var(--font-display); font-size: 28px; font-weight: 400; color: var(--color-white); line-height: 1; margin-bottom: 5px; }
+.spec-info span {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--color-text);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1000px) {
+  .hero-inner { flex-direction: column; align-items: flex-start; justify-content: center; padding-top: 40px; }
+  .hero-image-wrapper { opacity: 0.3; transform: translateX(-50%); }
+  .hero-floating-stats { display: none; }
+}
+
+@media (max-width: 700px) {
+  .hero-inner { width: calc(100% - 40px); }
+}

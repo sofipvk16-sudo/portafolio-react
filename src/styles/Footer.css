@@ -1,0 +1,16 @@
+/* ═══════════════════════════════════════════════════════
+   🔚 FOOTER
+═══════════════════════════════════════════════════════ */
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 30px 20px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--color-text);
+  border-top: 1px solid var(--color-border);
+}

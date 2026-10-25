@@ -1,0 +1,28 @@
+/* ═══════════════════════════════════════════════════════
+   📊 SOBRE MÍ
+═══════════════════════════════════════════════════════ */
+
+.about { padding: 100px 0; border-bottom: 1px solid var(--color-border); }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 60px;
+}
+
+.stat-item { display: flex; flex-direction: column; gap: 10px; }
+.stat-number { font-family: var(--font-display); font-size: clamp(50px, 6vw, 80px); color: var(--color-white); line-height: 1; }
+.stat-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; color: var(--color-text); text-transform: uppercase; }
+
+/* Texto a la izquierda, ventana de código a la derecha */
+.about-content { display: grid; grid-template-columns: minmax(0, 600px) 1fr; column-gap: 80px; }
+.about-content .section-title, .about-text { grid-column: 1; }
+
+.about-text { max-width: 600px; font-size: 18px; line-height: 1.6; display: flex; flex-direction: column; gap: 20px; }
+
+@media (max-width: 1000px) {
+  .stats-grid { grid-template-columns: 1fr; }
+  .about-content { grid-template-columns: 1fr; }
+}
